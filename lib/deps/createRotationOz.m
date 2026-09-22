@@ -1,0 +1,6 @@
+function T = createRotationOz(varargin)
+% geom3d createRotationOz: (theta) | (origin, theta) | (x0,y0,z0,theta)
+[o, theta] = parseRotArgs(varargin{:});
+c = cos(theta); s = sin(theta);
+R = [c -s 0 0; s c 0 0; 0 0 1 0; 0 0 0 1];
+T = aboutOrigin(R, o);
